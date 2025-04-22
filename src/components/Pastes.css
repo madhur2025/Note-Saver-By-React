@@ -1,0 +1,117 @@
+.pastes{
+    display :flex;
+    flex-direction: column;
+    /* justify-Content : center; */
+    background-color: #2C2C2C;
+    padding: 20px;
+    align-items: center;
+    min-height: 85vh;
+}
+.pastes-title-copy{
+    display: flex;
+    gap: 10px;
+    width: 70vw;
+    height: 8vh;
+}
+.pastes-title{
+    width: 100%;
+    /* max-width: 400px; */
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    /* transition: all 0.3s ease; */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+.pastes-title::placeholder {
+    color: #999;
+    transition: color 0.3s ease;
+}
+#pastes-btn{
+    width: 30%;
+    /* max-width: 400px; */
+    /* padding: 4px 4px; */
+    font-size: 1.2vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+    color: #4f46e5;
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); 
+}
+#pastes-btn:hover{
+    border-color: #4f46e5;
+}
+.pastes-content{
+    box-sizing: border-box;
+    width: 70vw;
+    border-radius: 9px;
+    margin: 10px;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    border: 2px solid #ddd;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  #card{
+    background-color: #F5F5F5;
+    margin: 7px 0px 7px 0px;
+    border: 2px solid #4f46e5;
+    border-radius: 8px;
+    padding: 10px;
+    min-height: 60px;
+    max-height: 120px;
+  }
+  .card-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .edit-btns{
+    display: flex;
+    gap:5px
+  }
+  .fun-btn{
+    width: 35px;
+    height: 25px;
+    border-radius: 8px;
+    border: none;
+    color: #4f46e5;
+    border: 2px solid grey;
+  }
+  #card-cont{
+    width: 75%;
+    overflow: hidden;
+    min-height: 30px;
+    max-height: 89px;
+  }
+  .fun-btn a{
+    color: #4f46e5;
+  }
+  #view-icon{
+    height: 22px;
+  }
+  #update-icon{
+    height: 20px;
+  }
+  #copy-icon{
+    height: 18px;
+  }
+  #dele-icon{
+    height: 20px;
+  }

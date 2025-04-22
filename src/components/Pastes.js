@@ -1,7 +1,8 @@
 import {useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-
+import { Link } from 'react-router-dom';
 import './Home.css'
+import './Pastes.css'
 import { removeFromPastes } from '../redux/pasteSlice';
 import copy from '../assests/icons8-copy-32.png';
 import edit from '../assests/icons8-edit-32.png';
@@ -25,15 +26,15 @@ function Pastes (){
         dispatch(removeFromPastes(pasteId))
     }
     return(
-        <div className='home'>
-        <div className='inp-field'>
-            <input className='input-title'type='text'placeholder='Search title'
+        <div className='pastes'>
+        <div className='pastes-title-copy'>
+            <input className='pastes-title'type='text'placeholder='Search title'
             value={searchTerm}
             onChange={(e)=>setSearchTerm(e.target.value)}/>
-            <button id='create-btn'>Search Note</button>
+            <button id='pastes-btn'>Search Note</button>
         </div>
 
-        <div className='content'>
+        <div className='pastes-content'>
             {filterData.length > 0 && filterData.map(
                 (paste)=>{
                     return (
@@ -41,10 +42,10 @@ function Pastes (){
                             <div className='card-top'>
                             <h2 id='card-title'>{paste.title}</h2>
                             <div className='edit-btns'>
-                                <button className='fun-btn'><a href={`/pastes/${paste?._id}`}><img src={view} id="view-icon"/></a></button>    
-                                <button className='fun-btn'><a href={`/?pasteId=${paste?._id}`}><img src={edit} id="update-icon"/></a></button>
-                                <button className='fun-btn' onClick={() =>{navigator.clipboard.writeText(paste?.content)}}><img id="copy-icon"src={copy} alt="My Pic" /></button>
-                                <button className='fun-btn' onClick={()=>handleDelete(paste?._id)}><img src={deleteicon} id="dele-icon"/></button>
+                                <button className='fun-btn'><Link to={`/pastes/${paste?._id}`}><img alt="view" src={view} id="view-icon"/></Link></button>    
+                                <button className='fun-btn'><Link to={`/?pasteId=${paste?._id}`}><img alt="edit" src={edit} id="update-icon"/></Link></button>
+                                <button className='fun-btn' onClick={() =>{navigator.clipboard.writeText(paste?.content)}}><img alt="copy" id="copy-icon"src={copy} /></button>
+                                <button className='fun-btn' onClick={()=>handleDelete(paste?._id)}><img alt ="delete" src={deleteicon} id="dele-icon"/></button>
                             </div>
                             </div>
                             <div className='card-bottom'>
