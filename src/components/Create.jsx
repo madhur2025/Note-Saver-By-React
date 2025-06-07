@@ -104,7 +104,7 @@ export default function Create() {
                 value={noteData.content}
                 onChange={(e) => setNoteData({ ...noteData, content: e.target.value })}
                 placeholder="Enter note content . . ."
-                className="mt-3 p-5 w-full min-h-110 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all ease-in-out duration-500 whitespace-pre-wrap"
+                className="mt-3 p-5 w-full min-h-100 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all ease-in-out duration-500 whitespace-pre-wrap"
             />
         </div>
     )

@@ -27,7 +27,7 @@ export default function ViewNote() {
     }
 
     return (
-        <div className="sm:w-285 min-w-90 min-h-125 mt-5 mx-auto px-4">
+        <div className="sm:w-285 min-w-90 min-h-125 mt-5 mb-5 mx-auto px-4">
             <div className="w-full h-12 border border-gray-300 rounded-md p-2 flex items-center justify-between">
                 <h2 className="text-lg text-indigo-600">{note?.title}</h2>
                 <p className="text-gray-700 text-sm">{note?.createAt && formatTime(note.createAt)}</p>

@@ -41,7 +41,7 @@ export default function Show() {
   const dataToRender = searchData.length > 0 ? searchData : notes
 
   return (
-    <div className="sm:w-285 min-w-90 min-h-125 mt-5 mx-auto px-4">
+    <div className="sm:w-285 min-w-90 min-h-125 mt-5 mx-auto px-4 mb-5">
       <section className="mb-3">
         <input
           placeholder="Search title . . ."
@@ -86,7 +86,7 @@ export default function Show() {
                   </button>
                 </div>
               </div>
-              <p className="mt-3 whitespace-pre-wrap text-gray-800 h-18 overflow-hidden">{note.content}</p>
+              <p className="mt-3 whitespace-pre-wrap text-gray-800 min-h-7 max-h-18 overflow-hidden">{note.content}</p>
             </div>
           ))
         )}
