@@ -2,8 +2,10 @@ import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { deleteNote } from "../Slices/NoteSlice"
+import { toast, ToastContainer } from "react-toastify"
 
 export default function Show() {
+
   const dispatch = useDispatch()
   const [searchQuery, setSearchName] = useState('')
   const navigate = useNavigate()
@@ -29,6 +31,7 @@ export default function Show() {
 
   function handleCopy(note) {
     navigator.clipboard.writeText(note?.content)
+    toast.success("Note copied !")
   }
 
   function handleDelete(note) {
@@ -41,7 +44,7 @@ export default function Show() {
   const dataToRender = searchData.length > 0 ? searchData : notes
 
   return (
-    <div className="sm:w-285 min-w-90 min-h-173 mt-5 mx-auto px-4 mb-5">
+    <div className="sm:w-285 min-w-90 mt-5 mx-auto px-4 mb-5">
       <section className="mb-3">
         <input
           placeholder="Search title . . ."
@@ -53,7 +56,7 @@ export default function Show() {
 
       <div className="space-y-4">
         {dataToRender.length === 0 ? (
-          <p className="text-gray-500 text-center">No notes available!</p>
+          <p className="text-gray-500 text-center">No notes created !</p>
         ) : (
           dataToRender.map((note) => (
             <div
@@ -70,19 +73,25 @@ export default function Show() {
                     className="bg-indigo-600 px-3 py-1 rounded text-white hover:bg-white hover:text-indigo-600 border border-indigo-600 transition-all duration-300"
                     onClick={() => handleViewNote(note)}
                   >
-                    View
+                    <i className="fas fa-eye text-white-600"></i>
                   </button>
                   <button
                     className="bg-indigo-600 px-3 py-1 rounded text-white hover:bg-white hover:text-indigo-600 border border-indigo-600 transition-all duration-300"
                     onClick={() => handleCopy(note)}
                   >
-                    Copy
+                    <i className="fas fa-copy text-white-600"></i>
                   </button>
                   <button
                     className="bg-red-500 px-3 py-1 rounded text-white hover:bg-white hover:text-red-500 border border-red-500 transition-all duration-300"
                     onClick={() => handleDelete(note)}
                   >
-                    Delete
+                    <i className="fas fa-trash-alt text-white-600"></i>
+                  </button>
+                  <button
+                    className="bg-indigo-600 px-3 py-1 rounded text-white hover:bg-white hover:text-indigo-600 border border-indigo-600 transition-all duration-300"
+                    onClick={() => navigate(`/edit/${note.id}`)}
+                  >
+                    <i className="fas fa-edit text-white-600"></i>
                   </button>
                 </div>
               </div>

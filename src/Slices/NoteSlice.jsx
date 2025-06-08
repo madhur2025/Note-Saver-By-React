@@ -11,8 +11,15 @@ export const NoteSlice = createSlice({
         deleteNote:(state,action)=>{
             const currNote = action.payload
             state.notes = state.notes.filter((note)=>note.id !== currNote.id)
+        },
+        updateNote:(state,action)=>{
+            const updatedNote = action.payload
+            const index = state.notes.findIndex((note)=>note.id === updatedNote.id)
+            if(index !== -1){
+                state.notes[index] = updatedNote
+            }
         }
     }
 })
-export const {addNote,deleteNote} = NoteSlice.actions
+export const {addNote,deleteNote,updateNote} = NoteSlice.actions
 export default NoteSlice.reducer

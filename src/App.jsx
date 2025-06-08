@@ -3,8 +3,15 @@ import Create from "../src/components/Create"
 import Show from "../src/components/Show"
 import ViewNote from "../src/components/ViewNote"
 import About from "./components/About"
+import EditNote from "./components/EditNote"
+import { useSelector } from "react-redux"
+import { useEffect } from "react"
 
 export default function App() {
+  const notes = useSelector((state)=>state.notes.notes)
+  useEffect(()=>{
+    localStorage.setItem("notes",JSON.stringify(notes))
+  },[notes])
   return (
     <Router>
       <div className="flex flex-col">
@@ -25,6 +32,7 @@ export default function App() {
             <Route path="/notes" element={<Show />} />
             <Route path="/note/:id" element={<ViewNote />} />
             <Route path="/about" element={<About/>}/>
+            <Route path="/edit/:id" element={<EditNote/>}/>
           </Routes>
         </main>
         <footer className="mt-3 w-full flex flex-col items-center">
