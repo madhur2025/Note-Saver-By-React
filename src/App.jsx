@@ -27,13 +27,10 @@ export default function App() {
             <Route path="/about" element={<About/>}/>
           </Routes>
         </main>
-        <footer className="fixed bottom-0 left-0 w-full bg-gray-100 border-t py-3 text-center text-sm text-gray-700">
-  <p>NoteSafe © 2025 All rights reserved</p>
-  <Link to="/about" className="text-indigo-600 hover:underline">
-    About Us – Help – Contact
-  </Link>
-</footer>
-
+        <footer className="mt-3 w-full flex flex-col items-center">
+          <p className="text-sm">NoteSafe © 2025 All rights reserved</p>
+          <Link to="/about" className="text-sm text-gray-900">About Us - Help - Contact</Link>
+        </footer>
       </div>
     </Router>
   )
